@@ -554,9 +554,38 @@ video {
   display: none;
 }
 
+.absolute {
+  position: absolute;
+}
+
+.relative {
+  position: relative;
+}
+
+.left-1\/2 {
+  left: 50%;
+}
+
+.top-1\/2 {
+  top: 50%;
+}
+
+.min-h-60 {
+  min-height: 15rem;
+}
+
+.origin-center {
+  transform-origin: center;
+}
+
 .text-3xl {
   font-size: 1.875rem;
   line-height: 2.25rem;
+}
+
+.text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
 }
 
 .font-bold {
@@ -566,3 +595,4 @@ video {
 .underline {
   text-decoration-line: underline;
 }
+
