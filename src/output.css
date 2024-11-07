@@ -588,6 +588,10 @@ video {
   }
 }
 
+.fixed {
+  position: fixed;
+}
+
 .absolute {
   position: absolute;
 }
@@ -632,6 +636,11 @@ video {
   grid-row: span 7 / span 7;
 }
 
+.mx-10 {
+  margin-left: 2.5rem;
+  margin-right: 2.5rem;
+}
+
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
@@ -659,6 +668,10 @@ video {
   margin-left: 215px;
 }
 
+.mr-\[1em\] {
+  margin-right: 1em;
+}
+
 .mt-10 {
   margin-top: 2.5rem;
 }
@@ -679,6 +692,10 @@ video {
   margin-top: 1.5rem;
 }
 
+.block {
+  display: block;
+}
+
 .flex {
   display: flex;
 }
@@ -687,8 +704,16 @@ video {
   display: grid;
 }
 
+.hidden {
+  display: none;
+}
+
 .h-\[100px\] {
   height: 100px;
+}
+
+.h-\[40em\] {
+  height: 40em;
 }
 
 .h-\[430px\] {
@@ -705,6 +730,10 @@ video {
 
 .h-\[800px\] {
   height: 800px;
+}
+
+.h-\[8em\] {
+  height: 8em;
 }
 
 .h-\[900px\] {
@@ -747,6 +776,10 @@ video {
   width: 900px;
 }
 
+.w-full {
+  width: 100%;
+}
+
 .max-w-4xl {
   max-width: 56rem;
 }
@@ -767,6 +800,10 @@ video {
 
 .transform {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.cursor-pointer {
+  cursor: pointer;
 }
 
 .grid-cols-1 {
@@ -795,6 +832,10 @@ video {
 
 .justify-between {
   justify-content: space-between;
+}
+
+.justify-around {
+  justify-content: space-around;
 }
 
 .gap-2 {
@@ -986,8 +1027,24 @@ video {
   line-height: 1;
 }
 
+.text-\[1\.2em\] {
+  font-size: 1.2em;
+}
+
+.text-\[1\.5em\] {
+  font-size: 1.5em;
+}
+
+.text-\[2\.4em\] {
+  font-size: 2.4em;
+}
+
 .text-\[21px\] {
   font-size: 21px;
+}
+
+.text-\[2em\] {
+  font-size: 2em;
 }
 
 .text-lg {
@@ -1000,6 +1057,10 @@ video {
   line-height: 1.25rem;
 }
 
+.font-\[600\] {
+  font-weight: 600;
+}
+
 .font-bold {
   font-weight: 700;
 }
@@ -1010,6 +1071,10 @@ video {
 
 .font-semibold {
   font-weight: 600;
+}
+
+.text-\[\#ffffff80\] {
+  color: #ffffff80;
 }
 
 .text-black {
@@ -1064,6 +1129,10 @@ video {
   backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
 }
 
+.duration-300 {
+  transition-duration: 300ms;
+}
+
 .hover\:bg-gray-200:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(229 231 235 / var(--tw-bg-opacity));
@@ -1080,6 +1149,14 @@ video {
 }
 
 @media (min-width: 768px) {
+  .md\:flex {
+    display: flex;
+  }
+
+  .md\:hidden {
+    display: none;
+  }
+
   .md\:grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
