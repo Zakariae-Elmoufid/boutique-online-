@@ -562,6 +562,7 @@ video {
   position: relative;
 }
 
+
 .col-span-12 {
   grid-column: span 12 / span 12;
 }
@@ -1238,11 +1239,38 @@ video {
 .text-sm {
   font-size: 0.875rem;
   line-height: 1.25rem;
+
+.left-1\/2 {
+  left: 50%;
+}
+
+.top-1\/2 {
+  top: 50%;
+}
+
+.min-h-60 {
+  min-height: 15rem;
+}
+
+.origin-center {
+  transform-origin: center;
+}
+
+.text-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+
+}
+
+.text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
 }
 
 .font-bold {
   font-weight: 700;
 }
+
 
 .font-extrabold {
   font-weight: 800;
@@ -1342,3 +1370,9 @@ video {
     padding-right: 5rem;
   }
 }
+
+.underline {
+  text-decoration-line: underline;
+}
+
+
