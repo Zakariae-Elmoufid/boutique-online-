@@ -1,0 +1,19 @@
+[
+  { 
+    "id": 1, 
+    "name": "Électronique"
+  },
+  { 
+    "id": 2,
+    "name": "Maison" 
+  },
+  {
+     "id": 3,
+     "name": "Mode" 
+    },
+
+  { 
+    "id": 4,
+    "name": "Sport"
+  }
+]
