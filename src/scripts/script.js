@@ -9,3 +9,8 @@ menu.addEventListener("click" , ()=>
         ullist.classList.toggle('responsiveul')
     }
 );
+
+
+fetch('products.json')
+      .then(response => response.json())
+      .then(json => console.log(json))
