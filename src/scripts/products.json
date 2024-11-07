@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "titre": "Téléphone",
+    "image": "images/phone.jpg",
+    "price": 300,
+    "category": "Électronique"
+  },
+  {
+    "id": 2,
+    "titre": "Tablette",
+    "image": "images/tablet.jpg",
+    "price": 200,
+    "category": "Électronique"
+  },
+  {
+    "id": 3,
+    "titre": "Lampe",
+    "image": "images/lamp.jpg",
+    "price": 20,
+    "category": "Maison"
+  },
+  {
+    "id": 4,
+    "titre": "Canapé",
+    "image": "images/sofa.jpg",
+    "price": 500,
+    "category": "Maison"
+  },
+  {
+    "id": 5,
+    "titre": "T-shirt",
+    "image": "images/tshirt.jpg",
+    "price": 15,
+    "category": "Mode"
+  },
+  {
+    "id": 6,
+    "titre": "Jean",
+    "image": "images/jean.jpg",
+    "price": 40,
+    "category": "Mode"
+  },
+  {
+    "id": 7,
+    "titre": "Chaussures",
+    "image": "images/shoes.jpg",
+    "price": 60,
+    "category": "Mode"
+  },
+  {
+    "id": 8,
+    "titre": "Ballon de football",
+    "image": "images/ball.jpg",
+    "price": 25,
+    "category": "Sport"
+  },
+  {
+    "id": 9,
+    "titre": "Raquette de tennis",
+    "image": "images/racket.jpg",
+    "price": 75,
+    "category": "Sport"
+  },
+  {
+    "id": 10,
+    "titre": "Vélo",
+    "image": "images/bike.jpg",
+    "price": 150,
+    "category": "Sport"
+  }
+]
