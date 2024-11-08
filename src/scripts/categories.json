@@ -1,19 +1,16 @@
 [
+  
   { 
-    "id": 1, 
-    "name": "Électronique"
-  },
-  { 
-    "id": 2,
-    "name": "Maison" 
+    "id": 1,
+    "name": "Gaming" 
   },
   {
-     "id": 3,
-     "name": "Mode" 
+     "id": 2,
+     "name": "Gadgets" 
     },
 
   { 
-    "id": 4,
-    "name": "Sport"
+    "id": 3,
+    "name": "Smartphones"
   }
 ]

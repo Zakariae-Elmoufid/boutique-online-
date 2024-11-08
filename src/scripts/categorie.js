@@ -1,62 +1,39 @@
-const categoryList = document.getElementById("category-list");
+let categoryListContainer = document.querySelector('.container-categorie');
 
+async function AfficherCategories() {
+    
+    let categoriesResponse = await fetch('../scripts/categories.json');
+    let categories = await categoriesResponse.json();
 
     
+    let productsResponse = await fetch('../scripts/products.json');
+    let products = await productsResponse.json();
 
-    // Fonction pour charger les catégories et produits depuis les fichiers JSON
-    async function loadCategoriesAndProducts() {
-        
-            // Charger les catégories
-            const categoryResponse = await fetch("categories.json");
-            const categories = await categoryResponse.json();
+    for (let i = 0; i < categories.length; i++) {
+        categoryListContainer.innerHTML += `
+        <h2 class="text-2xl font-semibold text-gray-700">${categories[i].name}</h2>
+        <div class="products-container flex  flex-wrap   gap-6 mt-4" id="category-${categories[i].id}">
+        </div>
+    `;
 
-            // Charger les produits
-            const productResponse = await fetch("products.json");
-            const products = await productResponse.json();
+        let productsContainer = document.querySelector(`#category-${categories[i].id}`);
 
-            // Associer les produits aux catégories
-            categories.forEach(category => {
-                category.products = products.filter(product => 
-                    product.categoryName === category.name);
-            });
-
-            // Afficher les catégories avec leurs produits
-            displayCategories(categories);
-     
+        for (let j = 0; j < products.array.length; j++) {
+            if (products.array[j].type.includes(categories[i].name)) {
+                productsContainer.innerHTML += `
+                <div class="w-[25em] min-w-72 p-4 border rounded-lg shadow-sm">
+                    <img src="${products.array[j].image}" alt="${products.array[j].titre}" class="rounded-lg">
+                    <div class="h-[7em] flex flex-col justify-between mt-6">
+                        <h3 class="font-bold text-lg">${products.array[j].titre}</h3>
+                        <p class="text-gray-600 font-medium">${products.array[j].price}</p>
+                        <p class="text-gray-500">${products.array[j].type}</p>
+                    </div>
+                    <button class="buttonss px-5 py-2 rounded-lg font-bold text-sm bg-gray-200 hover:bg-gray-300 transition duration-300">Add to cart</button>
+                </div>
+            `;
+            }
+        }
     }
+}
 
-    // Fonction pour afficher les catégories et produits
-    function displayCategories(categories) {
-        categoryList.innerHTML = ""; // Vider l'affichage avant chaque mise à jour
-
-        categories.forEach(category => {
-            // Conteneur de la catégorie
-            const categoryDiv = document.createElement("div");
-            categoryDiv.classList.add("bg-white", "p-4", "rounded-lg", "shadow-md");
-
-            // Titre de la catégorie
-            categoryDiv.innerHTML = `<h2 class="text-2xl font-semibold text-gray-800 mb-4">${category.name}</h2>`;
-
-            // Liste des produits de la catégorie
-            const productList = document.createElement("ul");
-            productList.classList.add("space-y-2");
-
-            category.products.forEach(product => {
-                const productItem = document.createElement("li");
-                productItem.classList.add("flex", "justify-between", "bg-gray-50", "p-3", "rounded-lg", "shadow-sm");
-
-                productItem.innerHTML = `
-                    <span class="text-gray-700">${product.name}</span>
-                    <span class="text-gray-600">${product.price}€</span>
-                `;
-
-                productList.appendChild(productItem);
-            });
-
-            categoryDiv.appendChild(productList);
-            categoryList.appendChild(categoryDiv);
-        });
-    }
-
-    // Charger les catégories et produits au démarrage
-    loadCategoriesAndProducts();
+AfficherCategories();
