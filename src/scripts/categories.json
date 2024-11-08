@@ -1,0 +1,16 @@
+[
+  
+  { 
+    "id": 1,
+    "name": "Gaming" 
+  },
+  {
+     "id": 2,
+     "name": "Gadgets" 
+    },
+
+  { 
+    "id": 3,
+    "name": "Smartphones"
+  }
+]
