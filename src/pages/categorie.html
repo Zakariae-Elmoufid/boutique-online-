@@ -32,37 +32,28 @@
  <!-- landing -->
   <section class=" relative min-h-60 bg-black ">
      <div class=" absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center">
-     <a  class=" text-white  ">Home / <span class="text-violet-900">Caterory</span></a>
+     <a  class=" text-white " href="../index.html">Home / <span class="text-violet-900">Caterory</span></a>
      <h1 class="mt-5 font-bold text-white text-5xl ">Caterory</h1>
     </div>
   </section>
   <!-- category -->
-   <section>
-    <div class="container mx-auto px-20 flex justify-between mt-10">
-        <button class="bg-violet-800 p-3 rounded-lg text-white ">Add category</button>
-        <form action="">
-            <select name="" id="">
-              <option class="bg-slate-600">Home Electronics</option>
-              <option >Computers & Accessories</option>
-              <option >Mobile Devices</option>
-              <option >Audio & Headphones</option>
-              <option >Gaming</option>
-              <option >Cameras & Photography</option>
-              <option >Wearable Tech</option>
-              <option >Refurbished Electronics</option>
-              <option >Batteries & Charging</option>
+   <section >
+    <div class="container md:mx-auto  flex justify-between mt-10 ">
+        <button id="btn-ajouter" class="bg-violet-800 p-3 rounded-lg text-white ">Add category</button>
+            <select name="" id="select-category">
+              <option selected>All Caterory</option>
             </select>
-           </form>
     </div>
    </section>
    
-   <div  class="container-categorie mx-auto p-6">
+   <div  class="container container-categorie md:mx-auto">
     <h1 class="text-4xl font-bold text-center text-gray-800 mb-6">Catégories de Produits</h1>
     
-    <div class="category-list" class="space-y-8"></div>
+    <div id="category-list" class="space-y-8"></div>
+
     </div>
 
-
    <script src="../scripts/categorie.js"></script>
+
 </body>
 </html>
