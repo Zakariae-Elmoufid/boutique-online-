@@ -21,7 +21,7 @@ async function getData() {
         </div>
         <div class="flex  justify-between items-center gap-1">
           <button class="buttonss px-5 py-4 rounded-lg  mt-1 font-bold text-[1.1em] hover:bg-[#4928CF] hover:text-white duration-300 bg-gray-100 boder-0  ">Add to cart</button>
-          <a href=""><img src="/src/images/favorite.svg" class="w-[39px] h-[39px]" alt=""></a>
+          <a href="pages/favorite.html"><img src="/src/images/favorite.svg" class="w-[39px] h-[39px]" alt=""></a>
     </div>
       `
     }
