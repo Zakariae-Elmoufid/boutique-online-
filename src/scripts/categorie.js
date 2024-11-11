@@ -1,4 +1,7 @@
 let categoryListContainer = document.querySelector('.container-categorie');
+let btnSubmit = document.getElementById("btn-submit");
+let btnAjouter = document.getElementById("btn-ajouter");
+
 
 async function AfficherCategories() {
     let categoriesResponse = await fetch('../scripts/categories.json');
@@ -40,6 +43,15 @@ async function AfficherCategories() {
     selectCategory.addEventListener("change", () => {
         choisirCategorie(selectCategory.value, categories);
     });
+
+    btnAjouter.addEventListener("click", function() {
+        document.getElementById("page-ajouter").style.display = "flex";
+    });
+
+    btnSubmit.addEventListener("click", function() {
+        AjouterCategorie();
+    });
+    
 }
 
 function choisirCategorie(selectedCategory, categories) {
@@ -63,8 +75,11 @@ function choisirCategorie(selectedCategory, categories) {
             document.getElementById(`category-${selected.id}`).style.display = 'flex';
         }
     }
+
 }
 AfficherCategories();
 
 
 
+function AjouterCategorie() {
+}
