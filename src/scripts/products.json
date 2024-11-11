@@ -3,59 +3,60 @@
 {
     "array" :[
 
-        {
-            "image" : "../images/AirPods-Pro.webp",
-            "titre": "AirPods Pro",
-            "price": "$249.00",
-            "type": "Gadgets"
-        },
-        {
-            "image" : "../images/AirTag.webp",
-            "titre": "AirTag",
-            "price": "$29.00",
-            "type": "Gadgets"
-        },
-        {
-            "image" : "../images/Apple-Watch-Series-6.webp",
-            "titre": "Apple Watch Series 6",
-            "price": "$399.00",
-            "type": "Gadgets"
-        },
-        {
-            "image" : "../images/HTC-Vive-Pro-2.webp",
-            "titre": "HTC Vive Pro 2",
-            "price": "$699.00",
-            "type": "Gadgets, Gaming"
-        },
+       
         {
             "image" : "../images/Razer-Blackshark.webp",
             "titre": "Razer Blackshark",
-            "price": "$159.00",
+            "price": 159.00,
             "type": "Gadgets, Gaming"
         },
         {
             "image" : "../images/Samsung-Galaxy-S21.webp",
             "titre": "Samsung Galaxy S21",
-            "price": "$799.00",
+            "price": 799.00,
             "type": "Smartphones"
         },
         {
             "image" : "../images/Valve-Index-Knuckles.webp",
             "titre": "Valve Index Knuckles",
-            "price": "$419.00",
+            "price": 419.00,
             "type": "Gaming"
         },
         {
             "image" : "../images/XBOX-Elite-Controller.webp",
             "titre": "XBOX Elite Controller",
-            "price": "$179.00",
+            "price": 179.00,
             "type": "Gaming"
         },
         {
             "image" : "../images/XBOX-Series-X.webp",
             "titre": "XBOX Series X",
-            "price": "$499.00",
+            "price": 499.00,
             "type": "Gaming"
+        },
+        {
+            "image" : "../images/AirPods-Pro.webp",
+            "titre": "AirPods Pro",
+            "price": 249.00,
+            "type": "Gadgets"
+        },
+        {
+            "image" : "../images/AirTag.webp",
+            "titre": "AirTag",
+            "price": 29.00,
+            "type": "Gadgets"
+        },
+        {
+            "image" : "../images/Apple-Watch-Series-6.webp",
+            "titre": "Apple Watch Series 6",
+            "price": 399.00,
+            "type": "Gadgets"
+        },
+        {
+            "image" : "../images/HTC-Vive-Pro-2.webp",
+            "titre": "HTC Vive Pro 2",
+            "price": 699.00,
+            "type": "Gadgets, Gaming"
         }
     ]
 }
