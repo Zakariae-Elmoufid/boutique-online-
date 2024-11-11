@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Favoris - Shopzone</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+  <!-- Navbar -->
+  <header class="bg-white shadow">
+    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+      <h1 class="text-2xl font-bold text-gray-800">Shopzone</h1>
+      <nav>
+        <a href="#" class="text-gray-600 hover:text-gray-800 px-4">Accueil</a>
+        <a href="#" class="text-gray-600 hover:text-gray-800 px-4">Produits</a>
+        <a href="#" class="text-gray-600 hover:text-gray-800 px-4">Panier</a>
+        <a href="#" class="text-gray-600 hover:text-gray-800 px-4">Favoris</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Wishlist Section -->
+  <section class="container mx-auto px-4 py-12">
+    <h2 class="text-3xl font-semibold text-gray-800 mb-6">Vos Favoris</h2>
+
+    <!-- Table for Favorite Items -->
+    <div class="overflow-x-auto">
+      <table class="min-w-full bg-white rounded-lg shadow-lg overflow-hidden">
+        <thead class="bg-gray-200 text-gray-700">
+          <tr>
+            <th class="px-6 py-3 text-left text-sm font-medium uppercase">Image</th>
+            <th class="px-6 py-3 text-left text-sm font-medium uppercase">Nom du Produit</th>
+            <th class="px-6 py-3 text-left text-sm font-medium uppercase">Description</th>
+            <th class="px-6 py-3 text-left text-sm font-medium uppercase">Prix</th>
+            <th class="px-6 py-3 text-center text-sm font-medium uppercase">Actions</th>
+          </tr>
+        </thead>
+        <tbody id="favorites-table-body" class="text-gray-600">
+          <!-- Les lignes de produits seront générées ici par JavaScript -->
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Message if no favorites -->
+    <div id="empty-message" class="text-center mt-8 hidden">
+      <p class="text-gray-500 text-lg">Vous n'avez pas encore de favoris. Ajoutez des produits pour les voir ici.</p>
+    </div>
+  </section>
+
+  <script>
+    // Fonction pour charger les données JSON et les afficher dans le tableau
+    async function loadFavorites() {
+      try {
+        const response = await fetch('favorites.json');
+        const favorites = await response.json();
+
+        const tableBody = document.getElementById('favorites-table-body');
+        const emptyMessage = document.getElementById('empty-message');
+
+        // Vérifie s'il y a des favoris
+        if (favorites.length === 0) {
+          emptyMessage.classList.remove('hidden');
+          return;
+        }
+
+        // Génère les lignes du tableau
+        favorites.forEach(favorite => {
+          const row = document.createElement('tr');
+          row.classList.add('border-b');
+
+          row.innerHTML = `
+            <td class="px-6 py-4">
+              <img src="${favorite.image}" alt="${favorite.name}" class="w-24 h-16 object-cover rounded-md">
+            </td>
+            <td class="px-6 py-4 font-semibold text-gray-800">${favorite.name}</td>
+            <td class="px-6 py-4">${favorite.description}</td>
+            <td class="px-6 py-4 font-semibold">${favorite.price}</td>
+            <td class="px-6 py-4 flex items-center justify-center space-x-4">
+              <button class="text-red-600 hover:text-red-800 focus:outline-none" title="Supprimer des favoris">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+              <button class="bg-blue-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-blue-700 focus:outline-none">Ajouter au panier</button>
+            </td>
+          `;
+          tableBody.appendChild(row);
+        });
+      } catch (error) {
+        console.error('Erreur lors du chargement des favoris :', error);
+      }
+    }
+
+    // Appel de la fonction pour charger les favoris
+    loadFavorites();
+  </script>
+
+</body>
+</html>

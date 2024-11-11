@@ -11,7 +11,7 @@
   
   </head>
   <body>
-    <header class="w-full h-[8em] bg-[#111518] flex justify-around items-center fixed">
+    <header class="w-full h-[8em] bg-[#111518] flex justify-around items-center fixed z-20">
       <div><h1 class="text-white text-[2.4em] font-bold">Gadgets</h1></div>
       <div>
         <nav class="listoful">
@@ -32,11 +32,11 @@
       <div class="bx bx-menu text-white block md:hidden text-[2em] cursor-pointer" id="menu-icon"></div>
   </header>
   
-    <section class="bg-[#111518] text-white">
+    <section class="bg-[#111518] text-white ">
       <div
-        class="relative flex flex-col items-center justify-center min-h-screen px-6 lg:flex-row lg:px-20"
+        class="relative flex flex-col items-center justify-between min-h-screen px-6 lg:flex-row lg:px-20 "
       >
-        <div class="flex flex-col items-center lg:items-start lg:w-1/2">
+        <div class="flex flex-col items-center lg:items-start lg:w-1/2 ">
           <p class="text-lg text-gray-400">From $999</p>
           <h1 class="mt-2 text-5xl font-bold text-white">iPhone 16 Pro Max</h1>
           <div class="mt-6 flex space-x-4">
@@ -85,8 +85,8 @@
       </div>
     </section>
 
-    <section class="container flex p-[50px] items-center justify-center">
-      <div class="grid grid-cols-2 w-[1000px]  gap-[30px] pl-[90px]" >
+    <section class="container flex p-[50px] w-[100vw] m-auto items-center justify-center">
+      <div class="grid grid-cols-2  gap-[20px]" >
         <div class="  border-2 rounded-[30px] p-[20px] hover:bg-[#fcb900] hover:text-white"> 
           <div class="flex flex-col justify-start">
           <h1 class="font-bold text-[21px]">Laptops</h1>
@@ -96,14 +96,14 @@
         <img src="/src/images/category-laptops.webp" alt="">
       </div>
       </div>
-      <div class="grid grid-rows-2 w-[400px] gap-[30px] "> 
+      <div class="grid grid-rows-2  gap-[30px] "> 
         <div class="  border-2 rounded-[30px] p-[20px]  hover:bg-[#4928cf] hover:text-white">
           <div class="flex flex-col justify-start">
           <h1 class=" font-bold text-[21px]">Drones</h1>
           <span>27</span>
         </div>
         <div class="flex justify-center items-center">
-          <img src="/src/images/category-drones-2.webp" class="w-[300px]" alt="">
+          <img src="/src/images/category-drones-2.webp" class="" alt="">
         </div>
         </div>
         <div class="grid grid-cols-2 gap-[30px] ">
@@ -113,7 +113,7 @@
           <span>373</span>
         </div>
         <div class=" justify-end items-end m-1">
-          <img src="/src/images/Apple-iPhone-16-Pro-hero-geo-240909_inline.jpg.large-removebg-preview.png" class="w-[150px]" alt="">
+          <img src="/src/images/Apple-iPhone-16-Pro-hero-geo-240909_inline.jpg.large-removebg-preview.png" class="" alt="">
         </div>
         </div>
         <div class="  border-2 rounded-[30px] p-[10px] gap-[30px] hover:bg-[#000] hover:text-white">
@@ -128,8 +128,7 @@
         </div>
       </div>
   
-      </section>
-
+      </section>  
     <!-- <section class="bg-blue-50 flex items-center justify-center min-h-screen">
       <div class="border w-[1100px] h-[900px] grid grid-cols-12 grid-rows-12 gap-2 p-5">
         <div class="col-span-12 row-span-5 border border-[#1875C1] flex flex-col items-center justify-center">
@@ -157,35 +156,52 @@
         </div>
     </div>   
     </section> -->
-   <section class="container flex items-center justify-center p-[50px]">
-          <div class="flex items-center bg-gradient-to-l from-slate-900 to-indigo-600 text-white rounded-lg p-8 shadow-lg w-[1100px] h-[430px]">
-        <div class="flex-1 space-y-4">
+   <section class="container flex items-center  m-auto p-[50px]">
+    <div style="background: linear-gradient(220deg, #111518 41%, #4928cf 100%);" class="flex items-center justify-between bg-linear-gradient(220deg, #111518 41%, #4928cf 100%) text-white rounded-lg p-8 shadow-lg w-full h-[50vh] gap-5">
+        <div class="flex-1 space-y-7 ">
             <h1 class="text-4xl font-extrabold">Oculus VR</h1>
-            <p class="text-lg">Experience total immersion in virtual reality with Oculus VR. Enjoy exceptional visual quality, compatibility with top VR games, and unprecedented freedom of movement. Dive into new experiences and push the boundaries of your imagination.</p>
+            <p class="text-lg">Plongez dans la réalité virtuelle avec Oculus VR : qualité visuelle exceptionnelle,<br> jeux VR de pointe et liberté de mouvement totale.</p>
             <div class="flex items-center space-x-4">
                 <button class="bg-white text-black px-4 py-2 rounded-lg font-semibold">View Offer</button>
             </div>
         </div>
         
 
-        <div class="flex-1">
-            <img src="/src/images/oculus-img.webp" alt="Oculus VR" class="w-[550px] h-auto rounded-lg">
+        <div class="flex">
+            <img src="/src/images/oculus-img.webp" alt="Oculus VR" class="w-[350px] h-[300px] rounded-lg  mr-[100px] ">
         </div>
     </div>
     </section>
 
-    <section class="container bg-[#111518] flex items-center justify-between h-[700px] ">
-      <div class="max-w-4xl mx-auto px-4 py-8 grid grid-cols-1 md:grid-cols-2 gap-[300px] ">
-        <!-- Image Section -->
-        <div class="relative w-[750px] ml-[-200px]">
+    <section class="container flex flex-col gap-[50px] mt-[30px] mb-[30px] m-auto">
+      <div class="flex justify-center items-center gap-[700px]">
+        <div class="flex flex-col ">
+            <h1 class="font-bold">Featured Products</h1>
+            <p>Discover our selection of must-have products!</p>
+        </div>
+        <div>
+          <button class="rounded-md  bg-gray-50 p-3 hover:bg-[#4928CF] hover:text-white duration-300">View All</button>
+        </div>
+      </div>
+      <div class=" cards-container w-full flex-wrap  flex justify-center items-center  gap-10 ">
+
+      </div>
+   
+      
+
+    </section>
+
+
+    <!-- <section class=" bg-[#111518] flex items-center justify-between h-[700px] m-auto ">
+      <div class=" relative w-full px-4 py-8 grid grid-cols-1 md:grid-cols-2 items-center">
+        <div class=" w-full flex justify-end">
           <img src="/src/images/GFEGUEGF.webp" alt="iPad Pro" class=" w-[900px] h-[600px]">
-          <div class="absolute  my-[-300px] ml-[200px]  border-none bg-gray-50/30 backdrop-blur-sm rounded-[25px] p-[25px] text-white">
+          <div class="absolute  my-[700px] ml-[200px]  border-none bg-gray-50/30 backdrop-blur-sm rounded-[25px] p-[25px] text-white">
             <h3 class="font-semibold text-lg">Puissance exceptionnelle avec la puce M1</h3>
             <p class="text-sm">La nouvelle puce M1 offre des performances incroyables<br>et une efficacité énergétique avancée.</p>
           </div>
         </div>
   
-        <!-- Text Section -->
         <div class="flex flex-col justify-center text-white ">
           <span class="text-gray-400">From 1099 DH</span>
           <h1 class="text-4xl font-bold mt-2">iPad Pro</h1>
@@ -193,11 +209,38 @@
           <button class="mt-6 bg-white text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-gray-200">Buy Now</button>
         </div>
       </div>
-    </section>  
+    </section>  -->
+
+    <section class="bg-[#111518] flex items-center justify-center h-[700px] mt-[50px]">
+  <div class="w-full px-4 py-8 grid grid-cols-1 md:grid-cols-2 items-center justify-center">
+    <!-- Image Section -->
+    <div class="relative w-full flex justify-end ml-[70px]">
+      <img src="/src/images/GFEGUEGF.webp" alt="iPad Pro" class="w-full h-[500px] max-w-[700px]">
+      <div class="absolute top-[50%] left-[50%] transform -translate-x-1/2 -translate-y-1/2 border-none bg-gray-50/30 backdrop-blur-sm rounded-[25px] p-[25px] text-white">
+        <h3 class="font-semibold text-lg">Puissance exceptionnelle avec la puce M1</h3>
+        <p class="text-sm">La nouvelle puce M1 offre des performances incroyables<br>et une efficacité énergétique avancée.</p>
+      </div>
+    </div>
+
+    <!-- Text Section -->
+    <div class="flex flex-col justify-center text-white mr-[70px]">
+      <span class="text-gray-400">From 1099 DH</span>
+      <h1 class="text-4xl font-bold mt-2">iPad Pro</h1>
+      <p class="text-gray-300 mt-4">Découvrez la puissance ultime avec le nouvel iPad Pro, conçu pour offrir des performances de pointe pour les créateurs et les professionnels.</p>
+      <button class="mt-6 bg-white text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-gray-200 w-[250px]">Buy Now</button>
+    </div>
+  </div>
+
+  
+  
+  
+  
+</section>
 
 
 
-      <section class="container mx-auto p-[100px] grid gap-[30px] md:grid-cols-3">
+
+<section class="container mx-auto p-[100px] grid gap-[30px] md:grid-cols-3">
         <!-- Card 1 -->
         <div class=" translate bg-white rounded-lg shadow-lg p-6  border border-gray-200 hover:scale-105">
           <div class=" bg-black  text-white rounded-full w-[90px] h-[90px] p-4 mx-auto flex items-center justify-center mb-4 hover:bg-[#4928cf]">
@@ -230,7 +273,6 @@
           <button class="bg-gray-100 text-black px-4 py-2 rounded-md font-semibold hover:bg-[#4928cf]  hover:text-white">Learn More</button>
         </div>
       </section>
-    
-    <script src="../scripts/script.js"></script>
+<script src="../scripts/index.js"></script>
 </body>
 </html>
