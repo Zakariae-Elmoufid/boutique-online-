@@ -1,101 +1,102 @@
-
-function getCartItems() {
-    return JSON.parse(localStorage.getItem('cart')) || [];
-}
-
-
-function saveCartItems(cartItems) {
-    localStorage.setItem('cart', JSON.stringify(cartItems));
-}
-
-
-function renderCartItems() {
-    const cartItems = getCartItems();
+document.addEventListener('DOMContentLoaded', function() {
     const cartItemsContainer = document.getElementById('cart-items');
-    cartItemsContainer.innerHTML = ''; 
 
-    cartItems.forEach((item, index) => {
-        const cartItemDiv = document.createElement('div');
-        cartItemDiv.classList.add('grid', 'grid-cols-5', 'gap-4', 'mb-4', 'items-center');
+    function loadCartItems() {
+        let cart = JSON.parse(localStorage.getItem("addedCard")) || [];
 
-        
-        cartItemDiv.innerHTML = `
-            <!-- Product Name -->
-            <div class="flex items-center">
-                <img src="https://via.placeholder.com/150" alt="${item.name}" class="w-16 h-16 rounded-lg bg-gray-200">
-                <span class="ml-4">${item.name}</span>
-            </div>
-            <!-- Price -->
-            <div class="flex items-center justify-center">
-                <span>$${item.price.toFixed(2)}</span>
-            </div>
-            <!-- Quantity -->
-            <div class="flex items-center justify-center">
-                <input type="number" min="1" value="${item.quantity}" class="w-16 border border-gray-300 rounded-lg p-1 text-center product-Q">
-            </div>
-            <!-- Subtotal -->
-            <div class="flex items-center justify-center">
-                <span>$${item.subtotal.toFixed(2)}</span>
-            </div>
-            <!-- Delete Button -->
-            <button class="text-red-500 font-semibold hover:text-red-700 delete-btn">Delete</button>
-        `;
-
-        
-        cartItemDiv.querySelector('.delete-btn').addEventListener('click', () => {
-            deleteCartItem(index);
+        cart.forEach(function(item) {
+            item.quantity = 1;
         });
-        cartItemDiv.querySelector('.product-Q').addEventListener('input', (e) => 
-            {
-                updatequantity(index, e.target.value);
+
+        localStorage.setItem("addedCard", JSON.stringify(cart));
+        cartItemsContainer.innerHTML = '';
+
+        cart.forEach(function(item) {
+            const cartItem = document.createElement('div');
+            cartItem.classList.add('grid', 'grid-cols-5', 'items-center', 'text-center', 'gap-4', 'mb-4');
+
+            cartItem.innerHTML = `
+                <div class="flex items-center space-x-4">
+                    <img src="${item.image}" alt="${item.name}" class="w-16 h-16 rounded-lg bg-gray-200">
+                    <p class="text-lg font-medium">${item.name}</p>
+                </div>
+                <p class="text-sm text-gray-600">$${item.price.toFixed(2)}</p>
+                <input type="number" min="1" value="${item.quantity}" class="w-16 border border-gray-300 rounded-lg p-1 text-center">
+                <p class="font-semibold">$${(item.price * item.quantity).toFixed(2)}</p>
+                <button class="text-red-500 font-semibold hover:text-red-700">Delete</button>
+            `;
+
+            cartItemsContainer.appendChild(cartItem);
+
+            const quantityInput = cartItem.querySelector('input[type="number"]');
+            quantityInput.addEventListener('input', function() {
+                updateSubtotal(cartItem, item);
             });
 
-        cartItemsContainer.appendChild(cartItemDiv);
-    });
-    updateSubtotal();
-}
+            const deleteButton = cartItem.querySelector('button');
+            deleteButton.addEventListener('click', function() {
+                deleteItem(cartItem, item);
+            });
+        });
 
-function deleteCartItem(index)
-{
-    let cartItems = getCartItems();
-    let updatecartItems = [];
-    for(let i = 0; i < cartItems.length; i++)
-    {
-        if (i !== index)
-        {
-            updatecartItems.push(cartItems[i])
-        }
+        updateOrderSummary();
     }
-    saveCartItems(updatecartItems);
-    renderCartItems();
-}
-document.addEventListener('DOMContentLoaded', renderCartItems);
 
+    function updateSubtotal(cartItem, item) {
+        const quantity = parseInt(cartItem.querySelector('input[type="number"]').value);
+        item.quantity = quantity;
+        saveCart();
 
-function updatequantity(index, newQ)
-{
-    let cartItems = getCartItems();
-    cartItems[index].quantity = newQ;
-    cartItems[index].subtotal = newQ * cartItems[index].price;
-    saveCartItems(cartItems);
-    renderCartItems(cartItems);
-}
+        const subtotalElement = cartItem.querySelector('p.font-semibold');
+        const newSubtotal = item.price * quantity;
+        subtotalElement.textContent = `$${newSubtotal.toFixed(2)}`;
 
-function updateSubtotal()
-{
-    let cartItems = getCartItems();
-    let subTotal = 0;
-
-    cartItems.forEach(item => 
-    {
-        subTotal += item.subtotal;
-
+        updateOrderSummary();
     }
-    );
-    let tax = subTotal * 0.2;
-    let total = subTotal + tax;
-    document.querySelector(".order-subtotal").textContent = `$${subTotal.toFixed(2)}`;
-    document.querySelector(".order-tax").textContent = `$${tax.toFixed(2)}`;
-    document.querySelector(".order-total").textContent = `$${total.toFixed(2)}`;
-}
-document.addEventListener('DOMContentLoaded', renderCartItems);
+
+    function updateOrderSummary() {
+        const cart = JSON.parse(localStorage.getItem("addedCard")) || [];
+        let subtotal = 0;
+
+        cart.forEach(function(item) {
+            subtotal += item.price * item.quantity;
+        });
+
+        const tax = subtotal * 0.08;
+        const total = subtotal + tax;
+
+        document.querySelector('.order-subtotal').textContent = `$${subtotal.toFixed(2)}`;
+        document.querySelector('.order-tax').textContent = `$${tax.toFixed(2)}`;
+        document.querySelector('.order-total').textContent = `$${total.toFixed(2)}`;
+    }
+
+    function deleteItem(cartItem, item) {
+        let cart = JSON.parse(localStorage.getItem("addedCard")) || [];
+        cart = cart.filter(function(cartItem) {
+            return cartItem.name !== item.name;
+        });
+
+        localStorage.setItem("addedCard", JSON.stringify(cart));
+        cartItem.remove();
+        updateOrderSummary();
+    }
+
+    function saveCart() {
+        const cart = [];
+        const cartItems = cartItemsContainer.querySelectorAll('.grid');
+
+        cartItems.forEach(function(cartItem) {
+            const name = cartItem.querySelector('p.text-lg').textContent;
+            const price = parseFloat(cartItem.querySelector('p.text-sm').textContent.replace('$', ''));
+            const quantity = parseInt(cartItem.querySelector('input[type="number"]').value);
+            const image = cartItem.querySelector('img').src;
+
+            cart.push({ name, price, quantity, image });
+        });
+
+        localStorage.setItem('addedCard', JSON.stringify(cart));
+    }
+
+    loadCartItems();
+});
+
