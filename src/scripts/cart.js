@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
         cart.forEach(function(item) {
             item.quantity = 1;
         });
+       
 
         localStorage.setItem("addedCard", JSON.stringify(cart));
         cartItemsContainer.innerHTML = '';
