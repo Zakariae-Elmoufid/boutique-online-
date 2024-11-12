@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const cartItemsContainer = document.getElementById('cart-items');
 
     function loadCartItems() {
-        let cart = JSON.parse(localStorage.getItem("addedCard")) || [];
+        let cart = JSON.parse(localStorage.getItem("addedCard"));
 
         cart.forEach(function(item) {
             item.quantity = 1;
@@ -17,8 +17,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
             cartItem.innerHTML = `
                 <div class="flex items-center space-x-4">
-                    <img src="${item.image}" alt="${item.name}" class="w-16 h-16 rounded-lg bg-gray-200">
-                    <p class="text-lg font-medium">${item.name}</p>
+                    <img src="${item.image}" alt="${item.titre}" class="w-16 h-16 rounded-lg bg-gray-200">
+                    <p class="text-xs font-medium">${item.titre}</p>
                 </div>
                 <p class="text-sm text-gray-600">$${item.price.toFixed(2)}</p>
                 <input type="number" min="1" value="${item.quantity}" class="w-16 border border-gray-300 rounded-lg p-1 text-center">
