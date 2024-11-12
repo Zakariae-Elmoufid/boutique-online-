@@ -116,6 +116,7 @@ function setlocalstorage(i) {
   let arrayofcartsadded = JSON.parse(localStorage.getItem("addedCard")) || [];
 
   arrayofcartsadded.push(data.array[i]);
+  
   localStorage.setItem("addedCard", JSON.stringify(arrayofcartsadded));
 
   function countCart() {
