@@ -3,10 +3,11 @@
 let categoryListContainer = document.querySelector('.container-categorie');
 let btnSubmit = document.getElementById("btn-submit");
 let btnAjouter = document.getElementById("btn-ajouter");
-
+let Products ;
+let categories = JSON.parse(localStorage.getItem("categories"));
 async function AfficherCategories() {
     
-    let categories = JSON.parse(localStorage.getItem("categories"));
+    
     if (!categories) { 
         let categoriesResponse = await fetch('../scripts/categories.json');
         categories = await categoriesResponse.json();
@@ -46,7 +47,10 @@ async function AfficherCategories() {
                         <p class="text-gray-600 font-medium">${products.array[j].price}</p>
                         <p class="text-gray-500">${products.array[j].type}</p>
                     </div>
-                    <button class="buttonss px-5 py-2 rounded-lg font-bold text-sm bg-gray-200 hover:bg-gray-300 transition duration-300">Add to cart</button>
+                    <div class=" h-[4em] flex  justify-between items-center">
+                        <button  onclick= "setlocalstorage(${j})" class=" buttonss px-5 py-4 rounded-lg  font-bold text-[1.1em] hover:bg-[#8a53bd] hover:text-white duration-300 bg-gray-100 boder-0  ">Add to cart</button>
+                        <button href="" onclick= "localStorageHeartIcon(${j})" class=" heart${j} text-[1.6em] text-[#636363] cursor-pointer"><i class='bx bxs-heart'></i></button>
+                     </div>
                 </div>
             `;
             }
@@ -124,3 +128,40 @@ function ajouterCategorie() {
 }
 AfficherCategories();
 
+let arrayofFavorits = []
+
+let arrayofcartsadded = [];
+let countlocalstorage;
+
+function setlocalstorage(j) {
+  let arrayofcartsadded = JSON.parse(localStorage.getItem("addedCard")) || [];
+
+  arrayofcartsadded.push(data.array[j]);
+  
+  localStorage.setItem("addedCard", JSON.stringify(arrayofcartsadded));
+
+  function countCart() {
+    countlocalstorage = JSON.parse(localStorage.getItem("addedCard"));
+    cartbutton.innerHTML = countlocalstorage ? countlocalstorage.length : 0;
+  }
+  countCart();
+}
+countlocalstorage = JSON.parse(localStorage.getItem("addedCard"));
+cartbutton.innerHTML = countlocalstorage.length;
+
+
+
+function localStorageHeartIcon(j)
+{
+  let heartIcon = document.querySelector(`.heart${i}`)
+  let arrayofFavorits = JSON.parse(localStorage.getItem("favorit")) || [];
+  arrayofFavorits.push(data.array[j])
+  localStorage.setItem("favorit", JSON.stringify(arrayofFavorits));
+  
+
+  localStorage.setItem("colorHeart", JSON.stringify("text-[red]"));
+  let heartcolor = JSON.parse(localStorage.getItem("colorHeart"));
+    heartIcon.classList.remove("text-[#636363]");
+    heartIcon.classList.add(heartcolor);
+    console.log(heartIcon);
+}

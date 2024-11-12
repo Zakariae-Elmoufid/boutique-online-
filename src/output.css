@@ -620,6 +620,10 @@ video {
   top: 50%;
 }
 
+.top-\[h-\[12vh\]\] {
+  top: h-[12vh];
+}
+
 .z-20 {
   z-index: 20;
 }
@@ -895,6 +899,10 @@ video {
   height: 100%;
 }
 
+.h-60 {
+  height: 15rem;
+}
+
 .max-h-64 {
   max-height: 16rem;
 }
@@ -917,6 +925,10 @@ video {
 
 .min-h-screen {
   min-height: 100vh;
+}
+
+.min-h-0 {
+  min-height: 0px;
 }
 
 .w-12 {
