@@ -29,9 +29,9 @@ async function AfficherCategories() {
         for (let j = 0; j < products.array.length; j++) {
             if (products.array[j].type.includes(categories[i].name)) {
                 productsContainer.innerHTML += `
-                <div class="w-64  p-4 border rounded-lg shadow-sm">
+                <div class="w-64  p-4 border rounded-lg shadow-sm mx-auto">
                     <img src="${products.array[j].image}" alt="${products.array[j].titre}" class="rounded-lg">
-                    <div class="h-[7em] flex flex-col justify-between mt-6">
+                    <div class="h-[7em] flex flex-col  justify-between mt-6">
                         <h3 class="font-bold text-lg">${products.array[j].titre}</h3>
                         <p class="text-gray-600 font-medium">${products.array[j].price}</p>
                         <p class="text-gray-500">${products.array[j].type}</p>
