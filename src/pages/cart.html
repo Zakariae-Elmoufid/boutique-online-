@@ -3,79 +3,134 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../output.css">
+    <link rel="stylesheet" href="../header.css">
+    <link rel="stylesheet"
+    href="https://unpkg.com/boxicons@latest/css/boxicons.min.css"> 
     <title>Shopping Cart</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <script src="../scripts/cart.js" defer></script>
-    <script src="../scripts/fakedata.js" defer></script>
 </head>
-<body class="bg-gray-100 flex justify-center items-center min-h-screen">
+<body>
 
+
+  <header class="w-full h-[12vh] bg-[#111518] flex justify-around items-center fixed">
+    <div><h1 class="text-white text-[2.4em] font-bold">Gadgets</h1></div>
+    <div>
+      <nav class="listoful">
+        <ul class=" ullist text-[#ffffff80] hidden md:flex">
+          <li class="mx-10 font-[600] text-[1.2em]  hover:text-white duration-300"><a href="../index.html">Home</a></li>
+          <li class="mx-10 font-[600] text-[1.2em]  hover:text-white duration-300"><a href="../products.html">products</a></li>
+          <li class="mx-10 font-[600] text-[1.2em]  hover:text-white duration-300"><a href="categorie.html">Caterory</a></li>
+          <li class="mx-10 font-[600] text-[1.2em]  hover:text-white duration-300"><a href="">Contact Us</a></li>
+          <div class='bx bx-cart-add text-[#ffffff80] hover:text-white cursor-pointer duration-300 cartbutton flex md:hidden text-[1.4em]'></div>
+      </ul>
+      </nav>
+
+    </div>
+    <div class="text-[1.5em] hidden md:flex">
+        <div class='bx bx-search-alt-2 text-[#ffffff80] hover:text-white mr-[1em] cursor-pointer duration-300'></div>
+        <div class='bx bxs-user-account text-[#ffffff80] hover:text-white mr-[1em] cursor-pointer duration-300'></div>
+        <div class='bx bx-cart-add text-[#ffffff80] hover:text-white cursor-pointer duration-300 cartbutton '></div>
+    </div>
+    <div class="bx bx-menu text-white block md:hidden text-[2em] cursor-pointer" id="menu-icon"></div>
+</header> 
+<main>
+  <div class="w-full h-[45vh] bg-[#111518] flex justify-center items-end">
+    <div class="h-80 flex flex-col justify-center items-center text-center font-bold">
+      <h1 class="text-white text-[3.2em] md:text-[5em] font-bold mt-5">Cart</h1>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="mt-[3em]">
     <div class="container mx-auto p-4 flex flex-col lg:flex-row lg:space-x-8 space-y-6 lg:space-y-0">
         
-        <!-- Cart Section -->
-        <div class="w-full lg:w-2/3 p-6 bg-white shadow-lg rounded-lg">
-            <h1 class="text-2xl font-semibold mb-4">Shopping Cart</h1>
-            
-            
-            <div class="border-b pb-2 mb-4">
-                <div class="grid grid-cols-5 text-center gap-4">
-                    <h2 class="font-semibold">Products</h2>
-                    <h2 class="font-semibold">Price</h2>
-                    <h2 class="font-semibold">Quantity</h2>
-                    <h2 class="font-semibold">Subtotal</h2>
-                    <h2 class="font-semibold">Actions</h2>
-                </div>
-            </div>
-
-            <!-- Cart Items Will Be Rendered Here -->
-            <div id="cart-items" class="mb-4">
-                
-                <div class="grid grid-cols-5 items-center text-center gap-4 mb-4">
-                    <!-- Product Image and Name -->
-                    <div class="flex items-center space-x-4">
-                        <img src="https://via.placeholder.com/80" alt="Product Image" class="w-16 h-16 rounded-lg bg-gray-200">
-                        <p class="text-lg font-medium">Product Name</p>
-                    </div>
-                    
-                    <!-- Product Price -->
-                    <p class="text-sm text-gray-600">$XX.XX</p>
-                    
-                    <!-- Product Quantity Input -->
-                    <input type="number" min="1" value="1" class="w-16 border border-gray-300 rounded-lg p-1 text-center">
-                    
-                    <!-- Product Subtotal -->
-                    <p class="font-semibold">$XX.XX</p>
-                    
-                    <!-- Delete Button -->
-                    <button class="text-red-500 font-semibold hover:text-red-700">Delete</button>
-                </div>
-            </div>
-            
-            <!-- Coupon Code Section -->
-            <div class="flex items-center mt-4 space-x-2">
-                <input type="text" placeholder="Coupon code" class="w-full border border-gray-300 rounded-lg p-2">
-                <button class="bg-blue-500 text-white px-4 py-2 rounded-lg">Apply</button>
-            </div>
-        </div>
-
-        <!-- Order Summary Section -->
-        <div class="w-full lg:w-1/3 p-6 bg-white shadow-lg rounded-lg max-h-64 overflow-y-auto">
-            <h1 class="text-2xl font-semibold mb-4">Order Summary</h1>
-            <p class="flex justify-between text-gray-700 mb-2">
-                <span>Subtotal:</span>
-                <span class="order-subtotal">$XX.XX</span>
-            </p>
-            <p class="flex justify-between text-gray-700 mb-2">
-                <span>Tax:</span>
-                <span class="order-tax">$XX.XX</span>
-            </p>
-            <p class="flex justify-between text-gray-800 font-semibold mb-4">
-                <span>Total:</span>
-                <span class="order-total">$XX.XX</span>
-            </p>
-            <button class="w-full bg-green-500 text-white px-4 py-2 rounded-lg">Proceed to Checkout</button>
-        </div>
-        
+      <!-- Cart Section -->
+      <div class="w-full lg:w-2/3 p-6 bg-white shadow-lg rounded-lg">
+          <h1 class="text-2xl font-semibold mb-4">Shopping Cart</h1>
+          
+          
+          <div class="border-b pb-2 mb-4">
+              <div class="grid grid-cols-5 text-center gap-4">
+                  <h2 class="font-semibold">Products</h2>
+                  <h2 class="font-semibold">Price</h2>
+                  <h2 class="font-semibold">Quantity</h2>
+                  <h2 class="font-semibold">Subtotal</h2>
+                  <h2 class="font-semibold">Actions</h2>
+              </div>
+          </div>
+    
+          <!-- Cart Items Will Be Rendered Here -->
+          <div id="cart-items" class="mb-4">
+              
+              <div class="grid grid-cols-5 items-center text-center gap-4 mb-4">
+                  <!-- Product Image and Name -->
+                  <div class="flex items-center space-x-4">
+                      <img src="https://via.placeholder.com/80" alt="Product Image" class="w-16 h-16 rounded-lg bg-gray-200">
+                      <p class="text-lg font-medium">Product Name</p>
+                  </div>
+                  
+                  <!-- Product Price -->
+                  <p class="text-sm text-gray-600">$XX.XX</p>
+                  
+                  <!-- Product Quantity Input -->
+                  <input type="number" min="1" value="1" class="w-16 border border-gray-300 rounded-lg p-1 text-center">
+                  
+                  <!-- Product Subtotal -->
+                  <p class="font-semibold">$XX.XX</p>
+                  
+                  <!-- Delete Button -->
+                  <button class="text-red-500 font-semibold hover:text-red-700">Delete</button>
+              </div>
+          </div>
+          
+          <!-- Coupon Code Section -->
+          <div class="flex items-center mt-4 space-x-2">
+              <input type="text" placeholder="Coupon code" class="w-full border border-gray-300 rounded-lg p-2">
+              <button class="bg-blue-500 text-white px-4 py-2 rounded-lg">Apply</button>
+          </div>
+      </div>
+    
+      <!-- Order Summary Section -->
+      <div class="w-full lg:w-1/3 p-6 bg-white shadow-lg rounded-lg max-h-64 overflow-y-auto">
+          <h1 class="text-2xl font-semibold mb-4">Order Summary</h1>
+          <p class="flex justify-between text-gray-700 mb-2">
+              <span>Subtotal:</span>
+              <span class="order-subtotal">$XX.XX</span>
+          </p>
+          <p class="flex justify-between text-gray-700 mb-2">
+              <span>Tax:</span>
+              <span class="order-tax">$XX.XX</span>
+          </p>
+          <p class="flex justify-between text-gray-800 font-semibold mb-4">
+              <span>Total:</span>
+              <span class="order-total">$XX.XX</span>
+          </p>
+          <button class="w-full bg-green-500 text-white px-4 py-2 rounded-lg">Proceed to Checkout</button>
+      </div>
+      
     </div>
+    
+  </div>
+  </main>
+
+
+<script src="../scripts/script.js"></script>
 </body>
 </html>
