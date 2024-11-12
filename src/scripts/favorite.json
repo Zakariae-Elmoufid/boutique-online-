@@ -1,0 +1,17 @@
+[
+    {
+      "id": 1,
+      "name": "Produit 1",
+      "description": "Description brève du produit 1.",
+      "price": "999 DH",
+      "image": "https://via.placeholder.com/100x80"
+    },
+    {
+      "id": 2,
+      "name": "Produit 2",
+      "description": "Description brève du produit 2.",
+      "price": "1099 DH",
+      "image": "https://via.placeholder.com/100x80"
+    }
+  ]
+  
