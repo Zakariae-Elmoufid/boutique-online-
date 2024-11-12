@@ -1,5 +1,6 @@
 let cardsContainer = document.querySelector(".cards-container");
 let cartbutton = document.querySelector(".cartbutton");
+let arrayofFavorits = []
 
 let selectTrie = document.getElementById("selectTrie");
 let data;
@@ -10,7 +11,7 @@ async function getTodos() {
   data = await respons.json();
   function affichage() {
     for (let i = 0; i < data.array.length; i++) {
-      cardsContainer.innerHTML += `        <div class="cards w-[25em] min-w-72 ">
+      cardsContainer.innerHTML += `        <div class="cards w-[20em] min-w-72 ">
             <div>
               <img src="${data.array[i].image}" alt="" class="rounded-lg">
             </div>
@@ -19,8 +20,9 @@ async function getTodos() {
               <p class="text-[#0a0a0aa2] font-bold">$${data.array[i].price}.00</p>
               <p class="text-[#0a0a0aa2] font-bold">${data.array[i].type}</p>
             </div>
-            <div class=" h-[4em] flex flex-col justify-end items-start">
+            <div class=" h-[4em] flex  justify-between items-center">
               <button  onclick= "setlocalstorage(${i})" class=" buttonss px-5 py-4 rounded-lg  font-bold text-[1.1em] hover:bg-[#8a53bd] hover:text-white duration-300 bg-gray-100 boder-0  ">Add to cart</button>
+              <button href="" onclick= "localStorageHeartIcon(${i})" class=" heart${i} text-[1.6em] text-[#636363] cursor-pointer"><i class='bx bxs-heart'></i></button>
             </div>
           </div>`;
     }
@@ -64,8 +66,9 @@ function Triepar() {
     <p class="text-[#0a0a0aa2] font-bold">$${sortbyprice[i].price}.00</p>
     <p class="text-[#0a0a0aa2] font-bold">${sortbyprice[i].type}</p>
   </div>
-  <div class=" h-[4em] flex flex-col justify-end items-start">
-    <button class="buttonss px-5 py-4 rounded-lg  font-bold text-[1.1em] hover:bg-[#8a53bd] hover:text-white duration-300 bg-gray-100 boder-0  ">Add to cart</button>
+            <div class=" h-[4em] flex  justify-between items-center">
+              <button  onclick= "setlocalstorage(${i})" class=" buttonss px-5 py-4 rounded-lg  font-bold text-[1.1em] hover:bg-[#8a53bd] hover:text-white duration-300 bg-gray-100 boder-0  ">Add to cart</button>
+              <button href="" onclick= "localStorageHeartIcon(${i})" class=" heart${i} text-[1.6em] text-[#636363] cursor-pointer"><i class='bx bxs-heart'></i></button>
   </div>
 </div>`;
       }
@@ -94,9 +97,10 @@ function Triepar() {
     <p class="text-[#0a0a0aa2] font-bold">$${sortbynome[i].price}.00</p>
     <p class="text-[#0a0a0aa2] font-bold">${sortbynome[i].type}</p>
   </div>
-  <div class=" h-[4em] flex flex-col justify-end items-start">
-    <button class="buttonss px-5 py-4 rounded-lg  font-bold text-[1.1em] hover:bg-[#8a53bd] hover:text-white duration-300 bg-gray-100 boder-0  ">Add to cart</button>
-  </div>
+            <div class=" h-[4em] flex  justify-between items-center">
+              <button  onclick= "setlocalstorage(${i})" class=" buttonss px-5 py-4 rounded-lg  font-bold text-[1.1em] hover:bg-[#8a53bd] hover:text-white duration-300 bg-gray-100 boder-0  ">Add to cart</button>
+              <button href="" onclick= "localStorageHeartIcon(${i})" class=" heart${i} text-[1.6em] text-[#636363] cursor-pointer"><i class='bx bxs-heart'></i></button>
+   </div>
 </div>`;
       }
     }
@@ -122,3 +126,21 @@ function setlocalstorage(i) {
 }
 countlocalstorage = JSON.parse(localStorage.getItem("addedCard"));
 cartbutton.innerHTML = countlocalstorage.length;
+
+
+
+function localStorageHeartIcon(i)
+{
+  let heartIcon = document.querySelector(`.heart${i}`)
+  let arrayofFavorits = JSON.parse(localStorage.getItem("favorit")) || [];
+  arrayofFavorits.push(data.array[i])
+  localStorage.setItem("favorit", JSON.stringify(arrayofFavorits));
+  
+
+  localStorage.setItem("colorHeart", JSON.stringify("text-[red]"));
+  let heartcolor = JSON.parse(localStorage.getItem("colorHeart"));
+    heartIcon.classList.remove("text-[#636363]");
+    heartIcon.classList.add(heartcolor);
+    console.log(heartIcon);
+}
+
