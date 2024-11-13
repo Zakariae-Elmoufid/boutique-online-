@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./output.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../header.css">
+    <link rel="stylesheet"
+    href="https://unpkg.com/boxicons@latest/css/boxicons.min.css"> 
+    <link href="../output.css" rel="stylesheet">
+  
+  </head>
+  <body> 
+    <header class="w-full h-[8em] bg-[#111518] flex justify-around items-center fixed z-20">
+      <div><h1 class="text-white text-[2.4em] font-bold">Gadgets</h1></div>
+      <div>
+        <nav class="listoful">
+          <ul class=" ullist text-[#ffffff80] hidden md:flex">
+            <li class="mx-10 font-[600] text-[1.2em]  hover:text-white duration-300"><a href="/src/index.html">Home</a></li>
+            <li class="mx-10 font-[600] text-[1.2em]  hover:text-white duration-300"><a href="../pages/products.html">Products</a></li>
+            <li class="mx-10 font-[600] text-[1.2em]  hover:text-white duration-300"><a href="">Abouts us</a></li>
+            <li class="mx-10 font-[600] text-[1.2em]  hover:text-white duration-300"><a href="">Contact Us</a></li>
+        </ul>
+        </nav>
+
+      </div>
+      <div class="text-[1.5em] hidden md:flex">
+          <div class='bx bx-search-alt-2 text-[#ffffff80] hover:text-white mr-[1em] cursor-pointer duration-300'></div>
+          <div class='bx bxs-user-account text-[#ffffff80] hover:text-white mr-[1em] cursor-pointer duration-300'></div>
+          <div class='bx bx-cart-add text-[#ffffff80] hover:text-white cursor-pointer duration-300'></div>
+      </div>
+      <div class="bx bx-menu text-white block md:hidden text-[2em] cursor-pointer" id="menu-icon"></div>
+  </header>
+  
+    <section class="bg-[#111518] text-white ">
+      <div
+        class="relative flex flex-col items-center justify-between min-h-screen px-6 lg:flex-row lg:px-20 "
+      >
+        <div class="flex flex-col items-center lg:items-start lg:w-1/2 ">
+          <p class="text-lg text-gray-400">From $999</p>
+          <h1 class="mt-2 text-5xl font-bold text-white">iPhone 16 Pro Max</h1>
+          <div class="mt-6 flex space-x-4">
+            <button
+              class="px-8 py-3 bg-white text-gray-900 font-semibold rounded hover:bg-gray-300"
+            >
+              Buy Now
+            </button>
+            <button
+              class="flex items-center text-gray-400 hover:text-white"
+            ></button>
+          </div>
+        </div>
+
+        <div class="flex justify-center mt-10 lg:mt-0 lg:w-1/2">
+          <img
+            src="/src/images/home-hero-image.jpg"
+            alt="iPhone 12 Pro"
+            class="w-[700px] h-[750px] mt-[160px]"
+          />
+        </div>
+      </div>
+      <div
+        class="absolute hero-content flex items-center justify-center gap-[100px] my-[-215px] ml-[215px] border-none bg-black/30 backdrop-blur-sm rounded-[21px] p-[30px]"
+      >
+        <div>
+          <img src="" alt="" />
+          <h1 class="font-bold text-[21px]">Free Shipping</h1>
+          <p class="">Free shipping on all MAR orders</p>
+        </div>
+        <div>
+          
+          <img src="" alt="" />
+          <h1 class="font-bold text-[21px]">100% Money Back</h1>
+          <p>You have 10 days to return</p>
+        </div>
+        <div>
+          <img src="" alt="" />
+          <h1 class="font-bold text-[21px]">Support 24/7</h1>
+          <p>Contact us 24 hours a day</p>
+        </div>
+        <div>
+          <img src="" alt="" />
+          <h1 class="font-bold text-[21px]">100% Payment Secure</h1>
+          <p>Your payment are safe with us</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="container flex p-[70px] w-[100vw] m-auto items-center justify-center">
+      <div class="grid grid-cols-2 gap-[10px]">
+        <div class="border-2 rounded-[20px] pt-[10px] pr-[10px] pl-[10px] pb-[5px] hover:bg-[#fcb900] hover:text-white">
+          <div class="flex flex-col justify-start">
+            <h1 class="font-bold text-[23px]">Laptops</h1>
+            <span>145</span>
+          </div>
+          <div class="flex justify-center items-start">
+            <img src="/src/images/category-laptops.webp" alt="" class="max-h-[290px] m-0">
+          </div>
+        </div>
+    
+        <div class="grid grid-rows-2 gap-[10px]">
+          <div class="border-2 rounded-[20px] pt-[10px] pr-[10px] pl-[10px] pb-[5px] hover:bg-[#4928cf] hover:text-white">
+            <div class="flex flex-col justify-start">
+              <h1 class="font-bold text-[23px]">Drones</h1>
+              <span>27</span>
+            </div>
+            <div class="flex justify-center items-start">
+              <img src="/src/images/category-drones-2.webp" alt="" class="max-h-[100px] m-0">
+            </div>
+          </div>
+    
+          <div class="grid grid-cols-2 gap-[10px]">
+            <div class="border-2 rounded-[20px] pt-[10px] pr-[10px] pl-[10px] pb-[5px] hover:bg-[#257f31] hover:text-white">
+              <div class="flex flex-col justify-start">
+                <h1 class="font-bold text-[23px]">Smartphones</h1>
+                <span>373</span>
+              </div>
+              <div class="justify-center items-center">
+                <img src="/src/images/Apple-iPhone-16-Pro-hero-geo-240909_inline.jpg.large-removebg-preview.png" alt="" class="max-h-[130px]">
+              </div>
+            </div>
+    
+            <div class="border-2 rounded-[20px] pt-[10px] pr-[10px] pl-[10px] pb-[5px] hover:bg-[#000] hover:text-white">
+              <div class="flex flex-col justify-start">
+                <h1 class="font-bold text-[23px]">Gaming</h1>
+                <span>99</span>
+              </div>
+              <div class="justify-center items-center">
+                <img src="/src/images/category-gaming.webp" alt="" class="max-h-[100px]">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+            <!-- <section class="bg-blue-50 flex items-center justify-center min-h-screen">
+      <div class="border w-[1100px] h-[900px] grid grid-cols-12 grid-rows-12 gap-2 p-5">
+        <div class="col-span-12 row-span-5 border border-[#1875C1] flex flex-col items-center justify-center">
+            <h3 class="text-lg font-bold">Laptops</h3>
+            <p class="text-gray-600">245</p>
+            <img src="/src/images/category-laptops.webp" alt="Laptop" class="h-[100px]">
+        </div>
+
+        <div class="col-span-5 row-span-7 border border-[#1875C1] flex flex-col items-center justify-center">
+            <h3 class="text-lg font-bold">Drones</h3>
+            <p class="text-gray-600">28</p>
+            <img src="/src/images/category-laptops.webp" alt="Drone" class="h-[100px]">
+        </div>
+
+        <div class="col-span-7 row-span-3 border border-aquamarine flex flex-col items-center justify-center">
+            <h3 class="text-lg font-bold">Smartphones</h3>
+            <p class="text-gray-600">273</p>
+            <img src="/src/images/category-laptops.webp" alt="Smartphone" class="h-[100px]">
+        </div>
+
+        <div class="col-span-7 row-span-4 border border-aquamarine flex flex-col items-center justify-center">
+            <h3 class="text-lg font-bold">Gaming</h3>
+            <p class="text-gray-600">25</p>
+            <img src="/src/images/category-laptops.webp" alt="Gaming" class="h-[100px]">
+        </div>
+    </div>   
+    </section> -->
+   <section class="container flex items-center  m-auto p-[50px]">
+    <div style="background: linear-gradient(220deg, #111518 41%, #4928cf 100%);" class="flex items-center justify-between bg-linear-gradient(220deg, #111518 41%, #4928cf 100%) text-white rounded-lg p-8 shadow-lg w-full h-[50vh] gap-5">
+        <div class="flex-1 space-y-7 ">
+            <h1 class="text-4xl font-extrabold">Oculus VR</h1>
+            <p class="text-lg">Plongez dans la réalité virtuelle avec Oculus VR : qualité visuelle exceptionnelle,<br> jeux VR de pointe et liberté de mouvement totale.</p>
+            <div class="flex items-center space-x-4">
+                <button class="bg-white text-black px-4 py-2 rounded-lg font-semibold">View Offer</button>
+            </div>
+        </div>
+        
+
+        <div class="flex">
+            <img src="/src/images/oculus-img.webp" alt="Oculus VR" class="w-[350px] h-[300px] rounded-lg  mr-[100px] ">
+        </div>
+    </div>
+    </section>
+
+    <section class="container flex flex-col gap-[30px] mt-[30px] mb-[30px] m-auto">
+      <div class="flex justify-center items-center gap-[700px]">
+        <div class=" ml-[27px] flex flex-col ">
+            <h1 class="font-bold">Featured Products</h1>
+            <p>Discover our selection of must-have products!</p>
+        </div>
+        <div class="mr-[27px]">
+          <button class="rounded-md  bg-gray-50 p-3 w-[90px]  hover:bg-[#4928CF] hover:text-white duration-300">View All</button>
+        </div>
+      </div>
+      <div class=" cards-container w-full flex-wrap  flex justify-center items-center  gap-10 ">
+
+      </div>
+   
+      
+
+    </section>
+
+
+    <!-- <section class=" bg-[#111518] flex items-center justify-between h-[700px] m-auto ">
+      <div class=" relative w-full px-4 py-8 grid grid-cols-1 md:grid-cols-2 items-center">
+        <div class=" w-full flex justify-end">
+          <img src="/src/images/GFEGUEGF.webp" alt="iPad Pro" class=" w-[900px] h-[600px]">
+          <div class="absolute  my-[700px] ml-[200px]  border-none bg-gray-50/30 backdrop-blur-sm rounded-[25px] p-[25px] text-white">
+            <h3 class="font-semibold text-lg">Puissance exceptionnelle avec la puce M1</h3>
+            <p class="text-sm">La nouvelle puce M1 offre des performances incroyables<br>et une efficacité énergétique avancée.</p>
+          </div>
+        </div>
+  
+        <div class="flex flex-col justify-center text-white ">
+          <span class="text-gray-400">From 1099 DH</span>
+          <h1 class="text-4xl font-bold mt-2">iPad Pro</h1>
+          <p class="text-gray-300 mt-4">Découvrez la puissance ultime avec le nouvel iPad Pro, conçu pour offrir des performances de pointe pour les créateurs et les professionnels.</p>
+          <button class="mt-6 bg-white text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-gray-200">Buy Now</button>
+        </div>
+      </div>
+    </section>  -->
+
+  <section class="bg-[#111518] flex items-center justify-center h-[700px] mt-[50px]">
+  <div class="w-full px-4 py-8 grid grid-cols-1 md:grid-cols-2 items-center justify-center">
+    <!-- Image Section -->
+    <div class="relative w-full flex justify-end ml-[70px]">
+      <img src="/src/images/GFEGUEGF.webp" alt="iPad Pro" class="w-full h-[500px] max-w-[700px]">
+      <div class="absolute top-[50%] left-[50%] transform -translate-x-1/2 -translate-y-1/2 border-none bg-gray-50/30 backdrop-blur-sm rounded-[25px] p-[25px] text-white">
+        <h3 class="font-semibold text-lg">Puissance exceptionnelle avec la puce M1</h3>
+        <p class="text-sm">La nouvelle puce M1 offre des performances incroyables<br>et une efficacité énergétique avancée.</p>
+      </div>
+    </div>
+
+    <!-- Text Section -->
+    <div class="flex flex-col justify-center text-white mr-[70px]">
+      <span class="text-gray-400">From 1099 DH</span>
+      <h1 class="text-4xl font-bold mt-2">iPad Pro</h1>
+      <p class="text-gray-300 mt-4">Découvrez la puissance ultime avec le nouvel iPad Pro, conçu pour offrir des performances de pointe pour les créateurs et les professionnels.</p>
+      <button class="mt-6 bg-white text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-gray-200 w-[250px]">Buy Now</button>
+    </div>
+  </div>
+
+  
+  
+  
+  
+</section>
+
+
+
+
+<section class="container mx-auto p-[100px] grid gap-[30px] md:grid-cols-3">
+        <!-- Card 1 -->
+        <div class=" translate bg-white rounded-lg shadow-lg p-6  border border-gray-200 hover:scale-105">
+          <div class=" bg-black  text-white rounded-full w-[90px] h-[90px] p-4 mx-auto flex items-center justify-center mb-4 hover:bg-[#4928cf]">
+            <!-- Replace with the actual icon for Special Offers -->
+            <img src="/src/images/sale.png" alt="">          
+          </div>
+          <h3 class="text-xl font-bold mb-2">Special Offers</h3>
+          <p class="text-gray-600 mb-4">Discover exclusive discounts on our top products. Don't miss out on limited-time offers tailored just for you.</p>
+          <button class="bg-gray-100 text-black px-4 py-2 rounded-md font-semibold hover:bg-[#4928cf]  hover:text-white">Learn More</button>
+        </div>
+      
+        <!-- Card 2 -->
+        <div class="bg-white rounded-lg shadow-lg p-6  border border-gray-200  hover:scale-105 ">
+          <div class="bg-black text-white rounded-full w-[90px] h-[90px] p-4 mx-auto flex items-center justify-center mb-4 hover:bg-[#4928cf]" >
+            <!-- Replace with the actual icon for Amazing Events -->
+            <img  src="/src/images/amazing.png" alt="">
+          </div>
+          <h3 class="text-xl font-bold mb-2">Amazing Events</h3>
+          <p class="text-gray-600 mb-4">Join us for exciting events filled with entertainment, learning, and networking opportunities. Mark your calendar!</p>
+          <button class="bg-gray-100 text-black px-4 py-2 rounded-md font-semibold hover:bg-[#4928cf] hover:text-white">Learn More</button>
+        </div>
+      
+        <!-- Card 3 -->
+        <div class="bg-white rounded-lg shadow-lg p-6  border border-gray-200 hover:scale-105">
+          <div class="bg-black text-white rounded-full w-[90px] h-[90px] p-4 mx-auto flex items-center justify-center mb-4 hover:bg-[#4928cf]">
+            <img src="/src/images/costumer.png" alt="">
+          </div>
+          <h3 class="text-xl font-bold mb-2">Human Reviews</h3>
+          <p class="text-gray-600 mb-[40px]">Read authentic reviews from real customers. See why people love our products and services.</p>
+          <button class="bg-gray-100 text-black px-4 py-2 rounded-md font-semibold hover:bg-[#4928cf]  hover:text-white">Learn More</button>
+        </div>
+      </section>
+<script src="../scripts/index.js"></script>
+</body>
+</html>

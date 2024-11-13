@@ -1,0 +1,27 @@
+.alllist
+{
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 100%;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(89, 102, 102);
+    z-index: 999;
+    justify-content: space-around;
+    align-items: center; 
+    background-color: #111518;
+    text-align: center;
+}
+
+
+
+.responsiveul
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 100%;
+}
