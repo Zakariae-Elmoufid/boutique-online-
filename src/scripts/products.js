@@ -57,7 +57,7 @@ function Triepar() {
       }
 
       for (let i = 0; i < sortbyprice.length; i++) {
-        cardsContainer.innerHTML += `        <div class="cards w-[25em] min-w-72 ">
+        cardsContainer.innerHTML += ` <div class="cards w-[25em] min-w-72 ">
   <div>
     <img src="${sortbyprice[i].image}" alt="" class="rounded-lg">
   </div>
