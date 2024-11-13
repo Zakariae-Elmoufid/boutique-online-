@@ -114,34 +114,62 @@ let countlocalstorage;
 
 function setlocalstorage(i) {
   let arrayofcartsadded = JSON.parse(localStorage.getItem("addedCard")) || [];
+  let product = data.array[i];
+  let found = false;
 
-  arrayofcartsadded.push(data.array[i]);
-  
+
+  for (let j = 0; j < arrayofcartsadded.length; j++) {
+    if (arrayofcartsadded[j].cart.titre === product.titre) {
+
+      arrayofcartsadded[j].count += 1;
+      found = true;
+      break;
+    }
+  }
+
+  if (!found) {
+    let obj = {
+      count: 1,
+      cart: product
+    };
+    arrayofcartsadded.push(obj);
+  }
+
   localStorage.setItem("addedCard", JSON.stringify(arrayofcartsadded));
 
+
   function countCart() {
-    countlocalstorage = JSON.parse(localStorage.getItem("addedCard"));
+    let countlocalstorage = JSON.parse(localStorage.getItem("addedCard"));
     cartbutton.innerHTML = countlocalstorage ? countlocalstorage.length : 0;
   }
   countCart();
 }
+
 countlocalstorage = JSON.parse(localStorage.getItem("addedCard"));
 cartbutton.innerHTML = countlocalstorage.length;
 
-
-
-function localStorageHeartIcon(i)
-{
-  let heartIcon = document.querySelector(`.heart${i}`)
+function localStorageHeartIcon(i) {
+  let heartIcon = document.querySelector(`.heart${i}`);
   let arrayofFavorits = JSON.parse(localStorage.getItem("favorit")) || [];
-  arrayofFavorits.push(data.array[i])
-  localStorage.setItem("favorit", JSON.stringify(arrayofFavorits));
-  
+  let product = data.array[i];
+  let found = false;
 
+  for (let j = 0; j < arrayofFavorits.length; j++) {
+    if (arrayofFavorits[j].titre === product.titre) {
+      found = true;
+      break;
+    }
+  }
+
+  if (!found) {
+    arrayofFavorits.push(product);
+  }
+
+  localStorage.setItem("favorit", JSON.stringify(arrayofFavorits));
   localStorage.setItem("colorHeart", JSON.stringify("text-[red]"));
   let heartcolor = JSON.parse(localStorage.getItem("colorHeart"));
-    heartIcon.classList.remove("text-[#636363]");
-    heartIcon.classList.add(heartcolor);
-    console.log(heartIcon);
-}
 
+  heartIcon.classList.remove("text-[#636363]");
+  heartIcon.classList.add(heartcolor);
+  console.log(heartIcon);
+}
