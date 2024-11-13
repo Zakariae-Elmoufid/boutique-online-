@@ -659,16 +659,6 @@ video {
   margin-right: auto;
 }
 
-.my-\[-215px\] {
-  margin-top: -215px;
-  margin-bottom: -215px;
-}
-
-.my-\[700px\] {
-  margin-top: 700px;
-  margin-bottom: 700px;
-}
-
 .my-10 {
   margin-top: 2.5rem;
   margin-bottom: 2.5rem;
@@ -677,6 +667,16 @@ video {
 .my-4 {
   margin-top: 1rem;
   margin-bottom: 1rem;
+}
+
+.my-\[-215px\] {
+  margin-top: -215px;
+  margin-bottom: -215px;
+}
+
+.my-\[700px\] {
+  margin-top: 700px;
+  margin-bottom: 700px;
 }
 
 .mb-2 {
@@ -947,13 +947,17 @@ video {
   width: 90px;
 }
 
+.w-fit {
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
 .w-full {
   width: 100%;
 }
 
-.w-fit {
-  width: -moz-fit-content;
-  width: fit-content;
+.w-\[18em\] {
+  width: 18em;
 }
 
 .min-w-72 {
@@ -1297,6 +1301,10 @@ video {
   padding: 0.25rem;
 }
 
+.p-10 {
+  padding: 2.5rem;
+}
+
 .p-2 {
   padding: 0.5rem;
 }
@@ -1341,8 +1349,9 @@ video {
   padding: 70px;
 }
 
-.p-10 {
-  padding: 2.5rem;
+.px-10 {
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
 }
 
 .px-4 {
@@ -1395,9 +1404,9 @@ video {
   padding-bottom: 50px;
 }
 
-.px-10 {
-  padding-left: 2.5rem;
-  padding-right: 2.5rem;
+.py-1 {
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
 }
 
 .pb-2 {
@@ -1492,6 +1501,10 @@ video {
   font-size: 3.2em;
 }
 
+.text-\[30px\] {
+  font-size: 30px;
+}
+
 .text-lg {
   font-size: 1.125rem;
   line-height: 1.75rem;
@@ -1512,8 +1525,8 @@ video {
   line-height: 1rem;
 }
 
-.text-\[30px\] {
-  font-size: 30px;
+.text-\[1em\] {
+  font-size: 1em;
 }
 
 .font-\[600\] {
@@ -1608,6 +1621,11 @@ video {
   color: rgb(239 68 68 / var(--tw-text-opacity));
 }
 
+.text-violet-800 {
+  --tw-text-opacity: 1;
+  color: rgb(91 33 182 / var(--tw-text-opacity));
+}
+
 .text-violet-900 {
   --tw-text-opacity: 1;
   color: rgb(76 29 149 / var(--tw-text-opacity));
@@ -1618,9 +1636,8 @@ video {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
-.text-violet-800 {
-  --tw-text-opacity: 1;
-  color: rgb(91 33 182 / var(--tw-text-opacity));
+.text-\[1\.2\] {
+  color: 1.2;
 }
 
 .shadow-lg {
@@ -1783,6 +1800,10 @@ video {
 
   .md\:text-\[5em\] {
     font-size: 5em;
+  }
+
+  .md\:text-\[4em\] {
+    font-size: 4em;
   }
 }
 
