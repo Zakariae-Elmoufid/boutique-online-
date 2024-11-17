@@ -11,7 +11,7 @@ async function getTodos() {
   data = await respons.json();
   function affichage() {
     for (let i = 0; i < data.array.length; i++) {
-      cardsContainer.innerHTML += `        <div class="cards w-[20em] min-w-72 ">
+      cardsContainer.innerHTML += `        <div class="cards w-[18em] min-w-72 ">
             <div>
               <img src="${data.array[i].image}" alt="" class="rounded-lg">
             </div>
@@ -57,7 +57,7 @@ function Triepar() {
       }
 
       for (let i = 0; i < sortbyprice.length; i++) {
-        cardsContainer.innerHTML += ` <div class="cards w-[25em] min-w-72 ">
+        cardsContainer.innerHTML += `        <div class="cards w-[18em] min-w-72 ">
   <div>
     <img src="${sortbyprice[i].image}" alt="" class="rounded-lg">
   </div>
@@ -88,7 +88,7 @@ function Triepar() {
       }
 
       for (let i = 0; i < sortbynome.length; i++) {
-        cardsContainer.innerHTML += `        <div class="cards w-[25em] min-w-72 ">
+        cardsContainer.innerHTML += `        <div class="cards w-[18em] min-w-72 ">
   <div>
     <img src="${sortbynome[i].image}" alt="" class="rounded-lg">
   </div>
