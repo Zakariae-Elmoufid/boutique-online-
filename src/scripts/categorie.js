@@ -1,10 +1,13 @@
 let categoryListContainer = document.querySelector('.container-categorie');
 let btnSubmit = document.getElementById("btn-submit");
 let btnAjouter = document.getElementById("btn-ajouter");
+let cartbutton = document.querySelectorAll(".cartbutton");
+
+
 
 let categories = JSON.parse(localStorage.getItem("categories"));
+let products;
 async function AfficherCategories() {
-    
     
     if (!categories) { 
         let categoriesResponse = await fetch('../scripts/categories.json');
@@ -19,7 +22,7 @@ async function AfficherCategories() {
 
      
     let productsResponse = await fetch('../scripts/products.json');
-    let products = await productsResponse.json();
+    products = await productsResponse.json();
 
     let selectCategory = document.getElementById("select-category");
 
@@ -46,7 +49,7 @@ async function AfficherCategories() {
                         <p class="text-gray-500">${products.array[j].type}</p>
                     </div>
                     <div class=" h-[4em] flex  justify-between items-center">
-                        <button  onclick= "setlocalstorage(${j})" class=" buttonss px-5 py-4 rounded-lg  font-bold text-[1.1em] hover:bg-[#8a53bd] hover:text-white duration-300 bg-gray-100 boder-0  ">Add to cart</button>
+                        <button  onclick="setlocalstorage(${j})" class=" add-cart buttonss px-5 py-4 rounded-lg  font-bold text-[1.1em] hover:bg-[#8a53bd] hover:text-white duration-300 bg-gray-100 boder-0  ">Add to cart</button>
                         <button href="" onclick= "localStorageHeartIcon(${j})" class=" heart${j} text-[1.6em] text-[#636363] cursor-pointer"><i class='bx bxs-heart'></i></button>
                      </div>
                 </div>
@@ -54,6 +57,8 @@ async function AfficherCategories() {
             }
         }
     }
+
+        
 
     selectCategory.addEventListener("change", () => {
         choisirCategorie(selectCategory.value, categories);
@@ -67,7 +72,7 @@ async function AfficherCategories() {
         ajouterCategorie();
     });
 
-   
+    
   
 }
 
@@ -104,8 +109,6 @@ function ajouterCategorie() {
     categorie = JSON.parse(localStorage.getItem("categories")) || [];
     let newCategoryId = categorie[categorie.length-1].id + 1.
 
-    console.log(categorie);
-     
    
         let newCategory = {
             id: newCategoryId,
@@ -126,3 +129,39 @@ function ajouterCategorie() {
 }
 AfficherCategories();
 
+
+let arrayAddCart = [] ;
+let countlocalstorage;
+
+function setlocalstorage(j) {
+    let arrayAddCart = JSON.parse(localStorage.getItem("addedCard")) || [];
+    let product = products.array[j] ;
+    let found  = false ;
+
+    for(let i=0;i<arrayAddCart.length;i++){
+        if(arrayAddCart[i].cart.titre === product.titre){
+            arrayAddCart[i].count += 1;
+            found = true ;
+            break;
+        }
+    }
+    if(!found){
+        let objet = {
+            count : 1 ,
+            cart : product
+        };
+        arrayAddCart.push(objet)
+    }
+    
+    localStorage.setItem("addedCard",JSON.stringify(arrayAddCart));
+
+    function countCart () {
+       let  countlocalstorage = JSON.parse(localStorage.getItem("addedCard"));
+        cartbutton.forEach(element => {
+            element.innerHTML = ` <span class= "bg-red-700 text-white  p-2 rounded-full ">${countlocalstorage.length}</span>` ;
+        })
+    }
+    countCart();
+}
+countlocalstorage = JSON.parse(localStorage.getItem("addedCard"));
+cartbutton.innerHTML = countlocalstorage.length;

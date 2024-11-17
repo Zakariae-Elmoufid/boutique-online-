@@ -1,5 +1,5 @@
 let cardsContainer = document.querySelector(".cards-container");
-let cartbutton = document.querySelector(".cartbutton");
+let cartbutton = document.querySelectorAll(".cartbutton");
 let arrayofFavorits = []
 
 let selectTrie = document.getElementById("selectTrie");
@@ -140,7 +140,9 @@ function setlocalstorage(i) {
 
   function countCart() {
     let countlocalstorage = JSON.parse(localStorage.getItem("addedCard"));
-    cartbutton.innerHTML = countlocalstorage ? countlocalstorage.length : 0;
+    cartbutton.forEach(element => {
+      element.innerHTML = ` <span class= "bg-red-700 text-white  p-2 rounded-full ">${countlocalstorage.length}</span>` ;
+    })
   }
   countCart();
 }
